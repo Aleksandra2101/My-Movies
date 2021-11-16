@@ -6,8 +6,35 @@
             "description": "Feature adaptation of Frank Herbert's science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
             "duration": "155",
             "rate": "8.2",
-            "actors": "['Timothee Chalamet' , 'Zendaya' ,' Rebecca Ferguson' , 'Oscar Isaac']",
-            "imageUrl": ""
-        }
+            "actors": ["Timothee Chalamet" , "Zendaya" ," Rebecca Ferguson" , "Oscar Isaac"],
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg"
+        },
+        {
+            "id": 2,
+            "title": "No time to die",
+            "description": "No Time to Die is a 2021 spy film and the twenty-fifth in the James Bond series produced by Eon Productions. It stars Daniel Craig in his fifth and final outing as the fictional British MI6 agent James Bond.",
+            "duration": "155",
+            "rate": "7.5",
+            "actors": ["Daniel Craig" , "Léa Seydoux", "Rami Malek"],
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_UX67_CR0,0,67,98_AL_.jpg"
+        },
+      {
+        "id": 3,
+        "title": "Eternals",
+        "description": "The saga of the Eternals, a race of immortal beings who lived on Earth and shaped its history and civilizations.",
+        "duration" : "155",
+        "rate": "6.9",
+        "actors": ["Angelina Jolie" , "Kit Harington", "Gemma Chan"],
+        "imageUrl": "https://m.media-amazon.com/images/M/MV5BNjE5ZGVmYTQtYzA3ZS00NWM2LWJjNjQtYWZlZTllMjY4YTYwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UY100_CR69,0,100,100_AL_.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Red Notice",
+        "description": "An Interpol agent tracks the world's most wanted art thief.",
+        "duration" : "120",
+        "rate": "6.5",
+        "actors": ["Dwayne Johnson" , "Ryan Reynolds", "Gal Gadot"],
+        "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDczNTEzZWEtMmI0YS00YjE1LTlmZmQtOWQzYmQyMGE3YWY4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX100_CR0,0,100,100_AL_.jpg"
+      }
     ]
 }

@@ -1,0 +1,40 @@
+<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Title: </label>
+    <input id="title" type="text" formControlName="title" required>
+  </div>
+
+  <div>
+    <label for="description">Description: </label>
+    <input id="description" type="text" formControlName="description">
+  </div>
+  <div>
+    <label for="rate">Rate: </label>
+    <select id="rate" formControlName="rate">
+      <option *ngFor="let option of rates" >{{option}}</option>
+    </select>
+  </div>
+
+
+  <div formArrayName="actors">
+    <h2>Actors</h2>
+    <button (click)="addActors()" type="button">+ Add another actor</button>
+
+    <div *ngFor="let actor of actors.controls; let i=index">
+      <!-- The repeated actor template -->
+      <label for="actor-{{ i }}">Actors:</label>
+      <input id="actor-{{ i }}" type="text" [formControlName]="i">
+    </div>
+  </div>
+
+
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!movieForm.valid">Submit</button>
+</form>
+
+<hr>
+
+<p>Form Value: {{ movieForm.value | json }}</p>
+
+<p>Form Status: {{ movieForm.status }}</p>
+

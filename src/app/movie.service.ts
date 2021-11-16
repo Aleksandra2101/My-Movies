@@ -7,11 +7,12 @@ import {Movie} from './movies.model'
 @Injectable()
 export class MovieService {
     movies: Movie[] = [];
-    constructor(private http:HttpClient){} 
+    constructor(private http:HttpClient){}
 
-    getMovies() {
-        this.http.get(' http://localhost:3000/movies').subscribe(movies=> {
-            console.log(movies);
-        })
-    }
+  getMovies() {
+    return this.http.get(' http://localhost:3000/posts')
+  }
+  getMovie(movieId:string) {
+    return this.http.get(`http://localhost:3000/posts/${movieId}`)
+  }
 }

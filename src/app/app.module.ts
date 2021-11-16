@@ -3,20 +3,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
-
 import { AppComponent } from './app.component';
 
-import { HomeComponentComponent } from './home-component/home-component.component';
+import { MovieListComponent } from './pages/home-page/movie-list/movie-list.component';
+
+import { MovieThumbnailComponent } from './pages/home-page/movie-thumbnail/movie-thumbnail.component';
 import { MovieService } from './movie.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from './app-routing.module';
+import {MovieCreateEditComponent} from "./pages/create-edit-movie/movie-create-edit.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponentComponent,
+    MovieListComponent,
+    MovieThumbnailComponent,
+    MovieCreateEditComponent,
     HeaderComponent
   ],
   imports: [
@@ -25,6 +28,7 @@ import { HeaderComponent } from './header/header.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
