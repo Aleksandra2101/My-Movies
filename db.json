@@ -16,7 +16,7 @@
             "duration": "155",
             "rate": "7.5",
             "actors": ["Daniel Craig" , "Léa Seydoux", "Rami Malek"],
-            "imageUrl": "https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_UX67_CR0,0,67,98_AL_.jpg"
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/df/No_Time_to_Die_%28Original_Motion_Picture_Soundtrack%29.jpg"
         },
       {
         "id": 3,
@@ -25,7 +25,7 @@
         "duration" : "155",
         "rate": "6.9",
         "actors": ["Angelina Jolie" , "Kit Harington", "Gemma Chan"],
-        "imageUrl": "https://m.media-amazon.com/images/M/MV5BNjE5ZGVmYTQtYzA3ZS00NWM2LWJjNjQtYWZlZTllMjY4YTYwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UY100_CR69,0,100,100_AL_.jpg"
+        "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTExZmVjY2ItYTAzYi00MDdlLWFlOWItNTJhMDRjMzQ5ZGY0XkEyXkFqcGdeQXVyODIyOTEyMzY@._V1_FMjpg_UX1000_.jpg"
       },
       {
         "id": 4,
@@ -34,7 +34,7 @@
         "duration" : "120",
         "rate": "6.5",
         "actors": ["Dwayne Johnson" , "Ryan Reynolds", "Gal Gadot"],
-        "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDczNTEzZWEtMmI0YS00YjE1LTlmZmQtOWQzYmQyMGE3YWY4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX100_CR0,0,100,100_AL_.jpg"
+        "imageUrl": "https://m.media-amazon.com/images/M/MV5BZmRjODgyMzEtMzIxYS00OWY2LTk4YjUtMGMzZjMzMTZiN2Q0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg"
       }
     ]
 }
