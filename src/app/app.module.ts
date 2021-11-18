@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import {MovieCreateEditComponent} from "./pages/create-edit-movie/movie-create-edit.component";
+import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MovieCreateEditComponent} from "./pages/create-edit-movie/movie-create-e
     MovieListComponent,
     MovieThumbnailComponent,
     MovieCreateEditComponent,
-    HeaderComponent
+    HeaderComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,

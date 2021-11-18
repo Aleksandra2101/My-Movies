@@ -11,8 +11,9 @@ import { MovieService } from 'src/app/movie.service';
 })
 export class MovieCreateEditComponent implements OnInit {
   movies: Movie[] = [];
-  rates: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
+  rates: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  editingMode: boolean =false;
+  createMode: boolean = true;
   constructor(private movieService:MovieService, private formBuilder: FormBuilder, private route:ActivatedRoute) {}
 
   movieForm = this.formBuilder.group({
@@ -34,8 +35,8 @@ export class MovieCreateEditComponent implements OnInit {
   }
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.movieForm.value);
+    
+    
   }
   ngOnInit() {
     if(this.route.snapshot.params['movieId']) {
@@ -47,12 +48,15 @@ export class MovieCreateEditComponent implements OnInit {
           movieInfo.actors.forEach((actor:any) => {
             this.actors.push(this.formBuilder.control(actor));
           })
+          this.editingMode = true;
+          this.createMode = false;
         },
         error => {
         console.log(error)
         })
     }
-
+    this.editingMode = false;
+    this.createMode = true;
   }
 
 }

@@ -1,40 +1,54 @@
-<form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="title">Title: </label>
-    <input id="title" type="text" formControlName="title" required>
+<div class="container  d-flex justify-content-center " style="margin-top: 5rem;">
+  <div class="col-md-6">
+    <form  class ="form-control " [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="title"  class="form-label" >Title: </label>
+        <input id="title" type="text" class="form-control" formControlName="title" required>
+      </div>
+      
+      <div class="mb-3">
+        <label for="description" class="form-label">Description: </label>
+        <textarea class="form-control" id="description" rows="3"  formControlName="description"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="rate" class="form-label">Rate: </label>
+        <select  class="form-select" id="rate" formControlName="rate">
+          <option  *ngFor="let option of rates" >{{option}}</option>
+        </select>
+      </div>
+    
+    
+      <div formArrayName="actors">
+        
+        <div *ngFor="let actor of actors.controls; let i=index">
+          <!-- The repeated actor template -->
+  
+          <div *ngIf="createMode">
+            <label  class="form-label"for="actor-{{ i }}">Actor:</label>
+            <input  class="form-control" id="actor-{{ i }}" type="text" [formControlName]="i">
+          </div>
+          <div *ngIf="editingMode">
+            <label  class="form-label"for="actor-{{ i }}">Actor:</label>
+            <input  class="form-control" id="actor-{{ i }}" type="text" [formControlName]="i">
+          </div>
+
+       
+        </div>
+        <button class="btn btn-primary mt-4"(click)="addActors()" type="button">+ Add another actor</button>
+      </div>
+    
+      
+      <!-- <p class="mt-2">Complete the form to enable button.</p> -->
+      <button class="btn btn-primary mt-4" type="submit" [disabled]="!movieForm.valid">Submit</button>
+    </form>
+    
   </div>
-
-  <div>
-    <label for="description">Description: </label>
-    <input id="description" type="text" formControlName="description">
-  </div>
-  <div>
-    <label for="rate">Rate: </label>
-    <select id="rate" formControlName="rate">
-      <option *ngFor="let option of rates" >{{option}}</option>
-    </select>
-  </div>
+</div>
 
 
-  <div formArrayName="actors">
-    <h2>Actors</h2>
-    <button (click)="addActors()" type="button">+ Add another actor</button>
-
-    <div *ngFor="let actor of actors.controls; let i=index">
-      <!-- The repeated actor template -->
-      <label for="actor-{{ i }}">Actors:</label>
-      <input id="actor-{{ i }}" type="text" [formControlName]="i">
-    </div>
-  </div>
 
 
-  <p>Complete the form to enable button.</p>
-  <button type="submit" [disabled]="!movieForm.valid">Submit</button>
-</form>
+<!-- <p>Form Value: {{ movieForm.value | json }}</p>
 
-<hr>
-
-<p>Form Value: {{ movieForm.value | json }}</p>
-
-<p>Form Status: {{ movieForm.status }}</p>
+<p>Form Status: {{ movieForm.status }}</p> -->
 
