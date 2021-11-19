@@ -16,30 +16,32 @@
           <option  *ngFor="let option of rates" >{{option}}</option>
         </select>
       </div>
-    
+      <div class="mb-3">
+        <label for="imageUrl"  class="form-label" >Image Url: </label>
+        <input id="imageUrl" type="text" class="form-control" formControlName="imageUrl" required>
+      </div>
+      
     
       <div formArrayName="actors">
         
         <div *ngFor="let actor of actors.controls; let i=index">
           <!-- The repeated actor template -->
   
-          <div *ngIf="createMode">
+          <div >
             <label  class="form-label"for="actor-{{ i }}">Actor:</label>
             <input  class="form-control" id="actor-{{ i }}" type="text" [formControlName]="i">
           </div>
-          <div *ngIf="editingMode">
-            <label  class="form-label"for="actor-{{ i }}">Actor:</label>
-            <input  class="form-control" id="actor-{{ i }}" type="text" [formControlName]="i">
-          </div>
+       
+
 
        
         </div>
-        <button class="btn btn-primary mt-4"(click)="addActors()" type="button">+ Add another actor</button>
+        <button class="btn btn-primary mt-4"(click)="addActors()" type="button">+ Add actor</button>
       </div>
     
       
       <!-- <p class="mt-2">Complete the form to enable button.</p> -->
-      <button class="btn btn-primary mt-4" type="submit" [disabled]="!movieForm.valid">Submit</button>
+      <button class="btn btn-primary mt-4" type="submit" [disabled]="!movieForm.valid" >Submit</button>
     </form>
     
   </div>

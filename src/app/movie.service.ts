@@ -2,20 +2,32 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 
-import {Movie} from './movies.model'
+
+import { Movie } from './movies.model'
 
 @Injectable()
 export class MovieService {
-    movies: Movie[] = [];
-    constructor(private http:HttpClient){}
+  movies: Movie[] = [];
+  constructor(private http: HttpClient) { }
 
   getMovies() {
     return this.http.get(' http://localhost:3000/posts')
   }
-  getMovie(movieId:string) {
+  getMovie(movieId: string) {
     return this.http.get(`http://localhost:3000/posts/${movieId}`)
   }
 
+  postMovie(movies:Movie[]) {
+     this.http.post(' http://localhost:3000/posts',
+      movies
+    )
+    .subscribe((movie:any) => {
+      this.movies = movie;
+       })
+  }
 
- 
+
 }
+
+
+

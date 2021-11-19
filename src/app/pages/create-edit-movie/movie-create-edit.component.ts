@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import {Movie} from 'src/app/movies.model';
-import { FormBuilder, FormArray, Validators } from '@angular/forms';
+import { FormBuilder, FormControl,FormGroup,FormArray, Validators } from '@angular/forms';
 import { MovieService } from 'src/app/movie.service';
 @Component({
   selector: 'movie-create-edit',
@@ -12,14 +12,14 @@ import { MovieService } from 'src/app/movie.service';
 export class MovieCreateEditComponent implements OnInit {
   movies: Movie[] = [];
   rates: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  editingMode: boolean =false;
-  createMode: boolean = true;
+  
   constructor(private movieService:MovieService, private formBuilder: FormBuilder, private route:ActivatedRoute) {}
 
   movieForm = this.formBuilder.group({
     title: ['', Validators.required],
     description: [''],
     rate: [null],
+    imageUrl: ['', Validators.required],
     actors: this.formBuilder.array([
       this.formBuilder.control('')
     ])
@@ -35,7 +35,9 @@ export class MovieCreateEditComponent implements OnInit {
   }
 
   onSubmit() {
+    this.movieService.postMovie(this.movieForm.value);
     
+     
     
   }
   ngOnInit() {
@@ -44,19 +46,18 @@ export class MovieCreateEditComponent implements OnInit {
           this.movieForm.patchValue({
             title: movieInfo.title,
             description: movieInfo.description,
+            imageUrl:movieInfo.imageUrl,
           });
           movieInfo.actors.forEach((actor:any) => {
             this.actors.push(this.formBuilder.control(actor));
           })
-          this.editingMode = true;
-          this.createMode = false;
+         
         },
         error => {
         console.log(error)
         })
     }
-    this.editingMode = false;
-    this.createMode = true;
+   
   }
 
 }
