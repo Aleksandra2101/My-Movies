@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import {MovieCreateEditComponent} from "./pages/create-edit-movie/movie-create-edit.component";
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
     MovieThumbnailComponent,
     MovieCreateEditComponent,
     HeaderComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MatPaginatorModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 
 
@@ -17,15 +18,23 @@ export class MovieService {
     return this.http.get(`http://localhost:3000/posts/${movieId}`)
   }
 
-  postMovie(movies:Movie[]) {
-     this.http.post(' http://localhost:3000/posts',
-      movies
+  postMovie(movie:Movie):Observable<any> {
+     return this.http.post(' http://localhost:3000/posts',
+      movie
     )
-    .subscribe((movie:any) => {
-      this.movies = movie;
-       })
+   
+  }
+  editMovie(movieId:string ,movie:Movie):Observable<any>{
+    return this.http.patch(`http://localhost:3000/posts/${movieId}`,
+    movie)
+
   }
 
+  deleteMovie(movieId: number) {
+    return this.http.delete(`http://localhost:3000/posts/${movieId}`)
+  }
+
+ 
 
 }
 

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
+
 
 import {Movie} from '../../../movies.model';
 import { MovieService } from '../../../movie.service';
@@ -9,8 +11,12 @@ import { MovieService } from '../../../movie.service';
   styleUrls: ['./movie-list.component.css'],
   providers: [MovieService]
 })
+
+
 export class MovieListComponent implements OnInit {
+
   movies: Movie[] = [];
+
 
   constructor(private movieService:MovieService, private route:ActivatedRoute) {}
 
@@ -20,6 +26,10 @@ export class MovieListComponent implements OnInit {
       this.movies = movies;
     })
 
+ 
   }
 
+
+
 }
+

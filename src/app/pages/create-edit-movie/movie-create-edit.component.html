@@ -17,6 +17,10 @@
         </select>
       </div>
       <div class="mb-3">
+        <label for="duration"  class="form-label" >Duration: </label>
+        <input id="duration" type="text" class="form-control" formControlName="duration" required>
+      </div>
+      <div class="mb-3">
         <label for="imageUrl"  class="form-label" >Image Url: </label>
         <input id="imageUrl" type="text" class="form-control" formControlName="imageUrl" required>
       </div>
@@ -32,16 +36,15 @@
             <input  class="form-control" id="actor-{{ i }}" type="text" [formControlName]="i">
           </div>
        
-
-
-       
         </div>
         <button class="btn btn-primary mt-4"(click)="addActors()" type="button">+ Add actor</button>
       </div>
     
       
       <!-- <p class="mt-2">Complete the form to enable button.</p> -->
-      <button class="btn btn-primary mt-4" type="submit" [disabled]="!movieForm.valid" >Submit</button>
+      <button class="btn btn-primary mt-4" type="submit" [disabled]="!movieForm.valid">Submit</button>
+      <button class="btn btn-danger mt-4" style="margin-left:.5rem;"  (click)= "onDeleteMovie()">Delete</button>
+    
     </form>
     
   </div>
