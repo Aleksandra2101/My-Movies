@@ -5,6 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 
 import {Movie} from '../../../movies.model';
 import { MovieService } from '../../../movie.service';
+import { MatPaginator } from '@angular/material/paginator';
+
+
 @Component({
   selector: 'movie-list',
   templateUrl: './movie-list.component.html',
@@ -13,10 +16,12 @@ import { MovieService } from '../../../movie.service';
 })
 
 
+
+
 export class MovieListComponent implements OnInit {
 
-  movies: Movie[] = [];
 
+  movies: Movie[] = [];
 
   constructor(private movieService:MovieService, private route:ActivatedRoute) {}
 
@@ -32,4 +37,5 @@ export class MovieListComponent implements OnInit {
 
 
 }
+
 

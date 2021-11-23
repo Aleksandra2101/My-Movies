@@ -4,3 +4,10 @@
 -webkit-box-orient: vertical;
 overflow: hidden;
 }
+
+.card-body{
+  background-color:#8ea6bda2;
+  color: #fff;
+
+
+}
