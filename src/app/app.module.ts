@@ -14,8 +14,10 @@ import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import {MovieCreateEditComponent} from "./pages/create-edit-movie/movie-create-edit.component";
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
 import { ChangecolorDirective } from './pages/movie-detail/changecolor.directive';
+
+
+
 
 
 
@@ -38,8 +40,8 @@ import { ChangecolorDirective } from './pages/movie-detail/changecolor.directive
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
-    MatPaginatorModule,
+    AppRoutingModule
+  
     
   ],
   providers: [MovieService],
