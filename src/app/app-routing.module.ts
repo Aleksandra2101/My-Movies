@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {MovieListComponent} from "./pages/home-page/movie-list/movie-list.component";
 import {MovieCreateEditComponent} from "./pages/create-edit-movie/movie-create-edit.component";
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: 'create', component: MovieCreateEditComponent },
   { path: 'edit-movie/:movieId', component: MovieCreateEditComponent },
   {  path: 'movie/:movieId', component: MovieDetailComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {path:'auth',component : AuthComponent}
 ];
 
 @NgModule({

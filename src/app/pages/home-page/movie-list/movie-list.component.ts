@@ -20,8 +20,9 @@ import { MatPaginator } from '@angular/material/paginator';
 
 export class MovieListComponent implements OnInit {
 
-
+  filterMovie:string;
   movies: Movie[] = [];
+  
 
   constructor(private movieService:MovieService, private route:ActivatedRoute) {}
 
@@ -31,6 +32,7 @@ export class MovieListComponent implements OnInit {
       this.movies = movies;
     })
 
+    
  
   }
 
