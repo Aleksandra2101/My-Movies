@@ -9,13 +9,13 @@ Start JSON Server
 - json-server --watch db.json
 
 # Project Content
- -Log In page
- -Home page with movie posts paginated
- -Search filter
- -Detail view of movie posts
- -Create Movie
- -Edit Movie
- -Delete Movie
+ Log In page
+ Home page with movie posts paginated
+ Search filter
+ Detail view of movie posts
+ Create Movie
+ Edit Movie
+ Delete Movie
  
 
 
