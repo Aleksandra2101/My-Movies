@@ -1,9 +1,9 @@
-.card{
-     background-color: #fff;
-    box-shadow: 0 0 0 0.25rem #63636309;
-   
+.detail{
+    height: 100vh;
+    background-color:rgba(241, 237, 237, 0.664);
 }
-
-
-
-
+.card-body{
+    background-color:#98bbdba2;
+    color: #fff;
+  
+}

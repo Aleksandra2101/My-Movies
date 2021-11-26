@@ -1,27 +1,27 @@
-<div
-  class="row"
-  style="padding: 0 5rem 0 5rem;"
->
+<div class="row" >
   <form class="d-flex justify-content-center">
-    <input style="width:25rem;"
-      class="form-control search-box mt-2"
-      type="search"
-      name="search"
-      [(ngModel)]="filterMovie"
-      placeholder="Search Movie">
-
-
+    <div class="col-md-4">
+      <input
+        class="form-control  mt-2"
+        type="search"
+        name="search"
+        [(ngModel)]="filterMovie"
+        placeholder="Search Movie"
+      />
+    </div>
   </form>
 
-  <div *ngFor="let movie of movies | filter:filterMovie" class=" col-md-4 col-xs-12">
+  <div
+    *ngFor="let movie of movies | filter: filterMovie"
+    class="col-md-auto col-xs-12" style="padding-left: 2rem;" >
     <movie-thumbnail [movie]="movie"> </movie-thumbnail>
   </div>
   <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-start m-4">
-      <li class="page-item ">
+      <li class="page-item">
         <a class="btn btn-secondary" (click)="onPrevious()">Previous</a>
       </li>
-      <li class="page-item" style="margin-left:.3rem ;">
+      <li class="page-item" style="margin-left: 0.3rem">
         <a class="btn btn-secondary" (click)="onNext()">Next</a>
       </li>
     </ul>

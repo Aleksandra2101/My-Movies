@@ -1,0 +1,16 @@
+.auth{
+    height: 100vh;
+    background-color:#8ea6bd75;
+}
+input{
+    background-color:rgba(255, 255, 255, 0.884);
+    box-shadow: 0 0 0 0.25rem #63636309;
+    
+}
+
+label {
+    margin: .5rem;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    color:rgb(29, 132, 201);
+}

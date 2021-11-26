@@ -94,7 +94,32 @@
         "Richard Madden"
       ],
       "id": 10
+    },
+    {
+      "title": "Black Widow",
+      "description": "Natasha Romanoff, a former KGB spy, is shocked to find out that her ex handler, General Dreykov, is still alive. While evading capture by Taskmaster, she is forced to confront her dark past.",
+      "rate": "7",
+      "duration": "133",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/914MHuDfMSL.jpg",
+      "actors": [
+        "Scarlett Johansson",
+        "Florence Pugh",
+        "Rachel Weisz"
+      ],
+      "id": 11
+    },
+    {
+      "title": "Lord Of The Rings :",
+      "description": "A young hobbit, Frodo, who has found the One Ring that belongs to the Dark Lord Sauron, begins his journey with eight companions to Mount Doom, the only place where it can be destroyed.",
+      "rate": "9",
+      "duration": "178",
+      "imageUrl": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
+      "actors": [
+        "Elijah Wood",
+        "Ian McKellen",
+        "Orlando Bloom"
+      ],
+      "id": 12
     }
   ]
-  
 }

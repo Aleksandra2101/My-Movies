@@ -1,15 +1,14 @@
-import { Directive, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Directive,  ElementRef, Renderer2, Input } from '@angular/core';
 @Directive({
   selector: '[appChangecolor]'
 })
 export class ChangecolorDirective {
-
-  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
-
-
-  ngOnInit() {
-    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'green')
-
+@Input() color ='';
+  constructor(private elRef: ElementRef, private renderer: Renderer2) { 
+    elRef.nativeElement.style.color = this.color;
   }
+
+
+ 
 
 }
