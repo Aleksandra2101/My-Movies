@@ -74,12 +74,6 @@
       "rate": "9",
       "imageUrl": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
       "actors": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
         "Carrie Fisher",
         "Mark Hammil",
         "Harrison Ford"
@@ -101,6 +95,6 @@
       ],
       "id": 10
     }
-  ],
-  "users": []
+  ]
+  
 }

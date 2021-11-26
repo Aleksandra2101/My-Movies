@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { User } from '@/_models';
+import { config} from "./config";
+import { User } from './user.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -16,6 +16,7 @@ export class AuthenticationService {
   }
 
   public get currentUserValue(): User {
+    console.log(this.currentUserSubject.value)
     return this.currentUserSubject.value;
   }
 
@@ -24,11 +25,12 @@ export class AuthenticationService {
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {
+          this.currentUserSubject.next(user)
+          console.log(this.currentUserSubject.value)
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user);
-        }
 
+        }
         return user;
       }));
   }
@@ -37,5 +39,6 @@ export class AuthenticationService {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
+    console.log(this.currentUserSubject.value)
   }
 }

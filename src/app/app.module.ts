@@ -16,14 +16,8 @@ import {MovieCreateEditComponent} from "./pages/create-edit-movie/movie-create-e
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ChangecolorDirective } from './pages/movie-detail/changecolor.directive';
-import { AuthComponent } from './auth/auth.component';
+
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-
-
-
-
-
 
 
 @NgModule({
@@ -35,11 +29,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HeaderComponent,
     MovieDetailComponent,
     ChangecolorDirective,
-    AuthComponent,
 
-   
-  
-    
   ],
   imports: [
     BrowserModule,
@@ -48,9 +38,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HttpClientModule,
     AppRoutingModule,
     MatPaginatorModule,
-    Ng2SearchPipeModule,
-  
-    
+    Ng2SearchPipeModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

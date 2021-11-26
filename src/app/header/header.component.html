@@ -7,18 +7,20 @@
   <div class="collapse navbar-collapse  justify-content-between " id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home </a>
+        <a class="nav-link" href="">Home </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/create']">Create Movie</a>
       </li>
-    
+
     </ul>
 
     <ul class="navbar-nav" aria-labelledby="navbarSupportedContent">
-     
-      <li class="nav-item active">
-        <a class="  btn btn-primary nav-link"  [routerLink]="['/auth']"> Authenticate </a>
+
+      <li class="nav-item active d-flex">
+        <button *ngIf="!currentUser" class=" btn btn-primary nav-link"  [routerLink]="['/auth']"> Log In </button>
+        <button *ngIf="currentUser" class="  btn btn-primary nav-link" (click)="logout()"> Log Out </button>
+<!--        <button class="  btn btn-primary nav-link"  [routerLink]="['/auth/signup']"> Sign Up </button>-->
       </li>
     </ul>
 
