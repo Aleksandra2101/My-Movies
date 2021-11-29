@@ -13,5 +13,8 @@ Install JSON server - npm i json-server.To start JSON Server json-server --watch
  Edit Movie,
  Delete Movie .
  
+ #Log In
+ Username and password : test.
+ 
 
 
