@@ -8,7 +8,7 @@
           <p class="card-text">{{ movie.description }}</p>
           <h6 class="badge rounded-pill bg-dark">
             Rate:
-            <span appChangecolor="color">{{ movie.rate }}</span>
+            <span appChangecolor [rate]="movie.rate">{{ movie.rate }}</span>
             /10
           </h6>
           <p>Duration: {{ movie.duration }} min</p>

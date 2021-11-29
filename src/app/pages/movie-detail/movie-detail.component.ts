@@ -14,7 +14,7 @@ import { ChangecolorDirective } from './changecolor.directive';
 export class MovieDetailComponent implements OnInit {
   movies: Movie[] = [];
    movie:any;
-   color:string = '' ;
+   
   constructor(private movieService:MovieService, private route:ActivatedRoute) {
     
    }
@@ -23,9 +23,7 @@ export class MovieDetailComponent implements OnInit {
     
     this.movieService.getMovie( this.route.snapshot.params['movieId']).subscribe((movie:any) => {
       this.movie = movie;
-      if(movie.rate > 5){
-        this.color = 'green'
-      }
+    
        })
 
     

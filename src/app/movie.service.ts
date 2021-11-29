@@ -1,30 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Movie } from './movies.model'
+import { environment } from 'src/environments/environment';
+import { Movie } from './movies.model';
 
-@Injectable()
+const apiUrl = environment.apiUrl
+@Injectable({ providedIn: 'root' })
 export class MovieService {
-  movies: Movie[] = [];
-  constructor(private http: HttpClient) { }
+ 
+  constructor(private http: HttpClient) {}
 
-  getMovies(page:number=1) {
-    return this.http.get(`http://localhost:3000/posts?_page=${page}&_limit=5`)
+  getMovies(page: number = 1):Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${apiUrl}/posts?_page=${page}&_limit=5`);
   }
   getMovie(movieId: string) {
-    return this.http.get(`http://localhost:3000/posts/${movieId}`)
+    return this.http.get(`${apiUrl}/posts/${movieId}`);
   }
 
-  postMovie(movie:Movie):Observable<any> {
-     return this.http.post(' http://localhost:3000/posts', movie)
+  postMovie(movie: Movie): Observable<any> {
+    return this.http.post(`${apiUrl}/posts`, movie);
   }
-  editMovie(movieId:string ,movie:Movie):Observable<any>{
-    return this.http.patch(`http://localhost:3000/posts/${movieId}`,
-    movie)
-
+  editMovie(movieId: string, movie: Movie): Observable<any> {
+    return this.http.patch(`${apiUrl}/posts/${movieId}`, movie);
   }
 
   deleteMovie(movieId: number) {
-    return this.http.delete(`http://localhost:3000/posts/${movieId}`)
+    return this.http.delete(`${apiUrl}/posts/${movieId}`);
   }
 }
