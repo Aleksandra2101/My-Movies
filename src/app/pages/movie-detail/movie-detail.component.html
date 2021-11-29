@@ -6,10 +6,9 @@
         <div class="card-body">
           <h4 class="card-title">{{ movie.title }}</h4>
           <p class="card-text">{{ movie.description }}</p>
-          <h6 class="badge rounded-pill bg-dark">
+          <h6 appChangecolor [rate]="movie.rate" class="badge rounded-pill bg-dark">
             Rate:
-            <span appChangecolor [rate]="movie.rate">{{ movie.rate }}</span>
-            /10
+            {{ movie.rate }} /10
           </h6>
           <p>Duration: {{ movie.duration }} min</p>
           <P class="card-text">Actors: {{ movie.actors }}</P>
