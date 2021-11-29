@@ -27,6 +27,7 @@ export class MovieCreateEditComponent implements OnInit {
    });
     submited:boolean = false;
     movieId:number = 0;
+    editMode:boolean = false;
 
     ngOnInit() {
       if(this.route.snapshot.params['movieId']) {
@@ -44,13 +45,16 @@ export class MovieCreateEditComponent implements OnInit {
             this.actors.push(this.formBuilder.control(actor));
           })
           
+          this. editMode = true;
           
         },
         error => {
           console.log(error)
         })
+      
       }
       
+      this. editMode = false;
     }
     
     

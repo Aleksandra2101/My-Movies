@@ -1,59 +1,109 @@
-<div class="container  d-flex justify-content-center " style="margin-top: 1.5rem;">
+<div class="container d-flex justify-content-center" style="margin-top: 1.5rem">
   <div class="col-md-6">
-    <form  class ="form-control " [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+    <h3
+      class="d-flex justify-content-center"
+      style="color: rgb(29, 132, 201)"
+      *ngIf="editMode"
+    >
+      Edit Post
+    </h3>
+    <h3
+      class="d-flex justify-content-center"
+      style="color: rgb(29, 132, 201)"
+      *ngIf="!editMode"
+    >
+      Create Post
+    </h3>
+    <form class="form-control" [formGroup]="movieForm" (ngSubmit)="onSubmit()">
       <div class="mb-3">
-        <label for="title"  class="form-label" >Title: </label>
-        <input id="title" type="text" class="form-control" formControlName="title" required>
+        <label for="title" class="form-label">Title: </label>
+        <input
+          id="title"
+          type="text"
+          class="form-control"
+          formControlName="title"
+          required
+        />
       </div>
-      
+
       <div class="mb-3">
         <label for="description" class="form-label">Description: </label>
-        <textarea class="form-control" id="description" rows="3"  formControlName="description"></textarea>
+        <textarea
+          class="form-control"
+          id="description"
+          rows="3"
+          formControlName="description"
+        ></textarea>
       </div>
       <div class="mb-3">
         <label for="rate" class="form-label">Rate: </label>
-        <select  class="form-select" id="rate" formControlName="rate">
-          <option  *ngFor="let option of rates" >{{option}}</option>
+        <select class="form-select" id="rate" formControlName="rate">
+          <option *ngFor="let option of rates">{{ option }}</option>
         </select>
       </div>
       <div class="mb-3">
-        <label for="duration"  class="form-label" >Duration: </label>
-        <input id="duration" type="text" class="form-control" formControlName="duration" required>
+        <label for="duration" class="form-label">Duration: </label>
+        <input
+          id="duration"
+          type="text"
+          class="form-control"
+          formControlName="duration"
+          required
+        />
       </div>
       <div class="mb-3">
-        <label for="imageUrl"  class="form-label" >Image Url: </label>
-        <input id="imageUrl" type="text" class="form-control" formControlName="imageUrl" required>
+        <label for="imageUrl" class="form-label">Image Url: </label>
+        <input
+          id="imageUrl"
+          type="text"
+          class="form-control"
+          formControlName="imageUrl"
+          required
+        />
       </div>
-      
-    
+
       <div formArrayName="actors">
-        
-        <div *ngFor="let actor of actors.controls; let i=index">
+        <div *ngFor="let actor of actors.controls; let i = index">
           <!-- The repeated actor template -->
-  
-          <div >
-            <label  class="form-label"for="actor-{{ i }}">Actor:</label>
-            <input  class="form-control" id="actor-{{ i }}" type="text" [formControlName]="i">
+
+          <div>
+            <label class="form-label" for="actor-{{ i }}">Actor:</label>
+            <input
+              class="form-control"
+              id="actor-{{ i }}"
+              type="text"
+              [formControlName]="i"
+            />
           </div>
-       
         </div>
-        <button class="btn btn-primary mt-4"(click)="addActors()" type="button">+ Add actor</button>
+        <button
+          class="btn btn-primary mt-4"
+          (click)="addActors()"
+          type="button"
+        >
+          + Add actor
+        </button>
       </div>
-    
-      
+
       <!-- <p class="mt-2">Complete the form to enable button.</p> -->
-      <button class="btn btn-primary mt-4" type="submit" [disabled]="!movieForm.valid">Submit</button>
-      <button class="btn btn-danger mt-4" style="margin-left:.5rem;"  (click)= "onDeleteMovie()">Delete</button>
-    
+      <button
+        class="btn btn-primary mt-4"
+        type="submit"
+        [disabled]="!movieForm.valid"
+      >
+        Submit
+      </button>
+      <button
+        class="btn btn-danger mt-4"
+        style="margin-left: 0.5rem"
+        (click)="onDeleteMovie()"
+      >
+        Delete
+      </button>
     </form>
-    
   </div>
 </div>
-
-
-
 
 <!-- <p>Form Value: {{ movieForm.value | json }}</p>
 
 <p>Form Status: {{ movieForm.status }}</p> -->
-
