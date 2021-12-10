@@ -5,7 +5,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 
 # Install JSON server
-- npm i json-server.To start JSON Server json-server --watch db.json
+- npm i json-server.
+- To start JSON Server json-server --watch db.json
 
 # Project Content
  Log In page,
